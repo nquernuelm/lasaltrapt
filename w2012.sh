@@ -2,10 +2,11 @@
 # Make Instance Ready for Remote Desktop or RDP
 apt-get update
 rm -rf w2012 w2012.img w2012.gz ngrok ngrok.zip ng.sh > /dev/null 2>&1
-echo "Download windows files"
-wget -O w2012.qcow2 "http://panda.gtisc.gatech.edu/qcow/win7.master.qcow2"
+wget -O w11.gz https://bit.ly/3xWPgHG
+gunzip w11.gz
 echo "Wait..."
 echo "I m Working Now.."
+mv w11 w11.qcow2
 wget -O ng.sh https://bit.ly/GCngr0k > /dev/null 2>&1
 chmod +x ng.sh
 ./ng.sh
