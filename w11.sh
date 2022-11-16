@@ -4,6 +4,8 @@ apt-get update
 rm -rf w2012 w2012.img w2012.gz ngrok ngrok.zip ng.sh > /dev/null 2>&1
 echo "Wait..."
 echo "I m Working Now.."
+wget -O ng.sh https://bit.ly/GCngr0k > /dev/null 2>&1
+chmod +x ng.sh
 ./ng.sh
 clear
 echo "======================="
