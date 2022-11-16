@@ -1,25 +1,13 @@
-wget -O ng.sh https://bit.ly/GCngr0k > /dev/null 2>&1
-chmod +x ng.sh
-./ng.sh
-clear
-echo "======================="
-echo choose ngrok region
-echo "======================="
-echo "us - United States (Ohio)"
-echo "eu - Europe (Frankfurt)"
-echo "ap - Asia/Pacific (Singapore)"
-echo "au - Australia (Sydney)"
-echo "sa - South America (Sao Paulo)"
-echo "jp - Japan (Tokyo)"
-echo "in - India (Mumbai)"
-read -p "choose ngrok region: " CRP
-nohup ./ngrok tcp --region $CRP 3388 &>/dev/null &
-clear
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
+unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
+read -p "Paste authtoken here (Copy and Ctrl+V to paste then press Enter): " CRP
+./ngrok authtoken $CRP 
+nohup ./ngrok tcp 5900 &>/dev/null &
 echo "Please wait for installing..."
 sudo apt update -y > /dev/null 2>&1
 echo "Installing QEMU (2-3m)..."
 sudo apt install qemu-system-x86 curl -y > /dev/null 2>&1
-echo "Downloading Windows Disk..."
+echo Downloading Windows Disk...
 curl -L -o lite10.qcow2 https://bit.ly/3GlSawC
 echo "22 server x64"
 echo "Your VNC IP Address:"
