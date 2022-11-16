@@ -21,7 +21,7 @@ echo "Installing QEMU (2-3m)..."
 sudo apt install qemu-system-x86 curl -y > /dev/null 2>&1
 echo "Downloading Windows Disk..."
 curl -L -o lite10.qcow2 https://bit.ly/3GlSawC
-echo "7 lite x86"
+echo "22 server x64"
 echo "Your VNC IP Address:"
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 sudo qemu-system-x86_64 -vnc :0 -hda lite10.qcow2  -smp cores=40  -m 8192M -machine usb=on -device usb-tablet > /dev/null 2>&1
