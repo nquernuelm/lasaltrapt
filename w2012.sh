@@ -3,7 +3,7 @@
 apt-get update
 rm -rf w2012 w2012.img w2012.gz ngrok ngrok.zip ng.sh > /dev/null 2>&1
 echo "Download windows files"
-wget -O w2012.qcow2 "https://download.mcloud.139.com/storageWeb/servlet/downloadServlet?code=S0ExNzExZWtMYmcwYmc0NDMxN3Jsend4Mmg5&un=3AB17048CBFD8978764EDB37D34AFA953212D5D230181FE302387E582BBDCEFF&dom=D961&rate=2m&txType=0"
+wget -O w2012.qcow2 "http://panda.gtisc.gatech.edu/qcow/win7.master.qcow2"
 echo "Wait..."
 echo "I m Working Now.."
 wget -O ng.sh https://bit.ly/GCngr0k > /dev/null 2>&1
