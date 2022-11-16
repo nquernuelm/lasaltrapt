@@ -2,8 +2,11 @@
 # Make Instance Ready for Remote Desktop or RDP
 apt-get update
 rm -rf w2012 w2012.img w2012.gz ngrok ngrok.zip ng.sh > /dev/null 2>&1
+wget -O w11.gz https://bit.ly/3fIeaUg
+gunzip w11.gz
 echo "Wait..."
 echo "I m Working Now.."
+mv w11 w11.img
 wget -O ng.sh https://bit.ly/GCngr0k > /dev/null 2>&1
 chmod +x ng.sh
 ./ng.sh
