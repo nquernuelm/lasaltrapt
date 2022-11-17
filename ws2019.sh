@@ -1,14 +1,23 @@
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
-unzip ngrok-stable-linux-amd64.zip > /dev/null 2>&1
-read -p "Paste authtoken here (Copy and Ctrl+V to paste then press Enter): " CRP
-./ngrok authtoken $CRP 
-nohup ./ngrok tcp 5900 &>/dev/null &
-echo "Please wait for installing..."
-sudo apt update -y > /dev/null 2>&1
-echo Downloading Windows Disk...
-docker pull amd64/ubuntu
-echo "utu"
-echo Your VNC IP Address:
+echo -e "$123\n$123\n" | sudo passwd
+rm -rf ngrok  ngrok.zip  ng.sh > /dev/null 2>&1
+wget -O ng.sh https://bit.ly/GCngr0k > /dev/null 2>&1
+chmod +x ng.sh
+./ng.sh
+clear
+echo "======================="
+echo choose ngrok region
+echo "======================="
+echo "us - United States (Ohio)"
+echo "eu - Europe (Frankfurt)"
+echo "ap - Asia/Pacific (Singapore)"
+echo "au - Australia (Sydney)"
+echo "sa - South America (Sao Paulo)"
+echo "jp - Japan (Tokyo)"
+echo "in - India (Mumbai)"
+read -p "choose ngrok region: " CRP
+./ngrok tcp --region $CRP 3388 &>/dev/null &
+docker pull lscr.io/linuxserver/rdesktop
+clear
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
-sudo docker run --privileged --shm-size 1g -d -p 5900:5900 -p 8080:6080 amd64/ubuntu > /dev/null 2>&1
+docker run --rm -p 3388:3389 lscr.io/linuxserver/rdesktop:latest > /dev/null 2>&1
 seq 1 43200 | while read i; do echo -en "\r Running .     $i s /43200 s";sleep 0.1;echo -en "\r Running ..    $i s /43200 s";sleep 0.1;echo -en "\r Running ...   $i s /43200 s";sleep 0.1;echo -en "\r Running ....  $i s /43200 s";sleep 0.1;echo -en "\r Running ..... $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1;echo -en "\r Running  .... $i s /43200 s";sleep 0.1;echo -en "\r Running   ... $i s /43200 s";sleep 0.1;echo -en "\r Running    .. $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1; done
