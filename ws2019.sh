@@ -7,7 +7,7 @@ echo "Please wait for installing..."
 sudo apt update -y > /dev/null 2>&1
 echo Downloading Windows Disk...
 docker pull amd64/ubuntu
-echo "19 server x64"
+echo "utu"
 echo Your VNC IP Address:
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 sudo docker run --privileged --shm-size 1g -d -p 5900:5900 -p 8080:6080 amd64/ubuntu > /dev/null 2>&1
