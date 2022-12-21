@@ -31,7 +31,7 @@ echo "RDP Address:"
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo "===================================="
 echo "===================================="
-docker run --rm -p 3388:3389 lscr.io/linuxserver/rdesktop:ubuntu-kde > /dev/null 2>&1
+docker run --rm -p 3388:3389 lscr.io/linuxserver/rdesktop:ubuntu-xfce > /dev/null 2>&1
 b='\033[1m'
 r='\E[31m'
 g='\E[32m'
